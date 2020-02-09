@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Procurar from '../../assets/images/procurar.png';
+
+import { device } from '../../styles/device';
 
 export const Container = styled.header`
   display: flex;
   margin: 50px 0;
   justify-content: space-between;
   align-items: center;
-
-  svg {
-    cursor: pointer;
-    color: #fff;
-    &:hover {
-      color: #d8d8d8;
+  @media ${device.mobileL} {
+    flex-direction: column;
+    align-items: flex-start;
+    input {
+      margin-left: 10px;
     }
   }
 `;
@@ -22,25 +22,13 @@ export const Title = styled(Link)`
   text-decoration: none;
   font: 26px Roboto, sans-serif;
   margin: 10px;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  padding-right: 2px;
   font-weight: bold;
+  transition: 0.1s;
+
   &:hover {
     text-decoration: underline;
-  }
-`;
-
-export const SearchBar = styled.input`
-  background-color: #7159c1;
-  background-image: url(${Procurar});
-  background-position: 95% 10px;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  border: 1px solid #fff;
-  padding-right: 20px;
-  color: white;
-  font-size: 18px;
-  padding: 10px 45px 10px 10px;
-
-  &::placeholder {
-    color: white;
   }
 `;

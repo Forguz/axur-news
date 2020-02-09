@@ -1,12 +1,11 @@
 import React from 'react';
 
-import { Container, Title, SearchBar } from './styles';
+import { Container, Title } from './styles';
 
 export default function components() {
   return (
     <Container>
-      <Title to="/">Axur News</Title>
-      <SearchBar placeholder="Filter by author." />
+      <Title to="/">Axur News.</Title>
     </Container>
   );
 }
