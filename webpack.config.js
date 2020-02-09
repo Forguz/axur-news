@@ -13,6 +13,7 @@ module.exports = {
     open: 'http://localhost:8080/',
     hot: true,
     host: '0.0.0.0',
+    compress: true,
   },
   module: {
     rules: [
