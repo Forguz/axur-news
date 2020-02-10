@@ -1,11 +1,16 @@
 import React from 'react';
 
 import { Container, Title } from './styles';
+import history from '../../services/history';
 
-export default function components() {
+export default function Header() {
+  function handleTitleClick() {
+    history.push('/');
+  }
+
   return (
     <Container>
-      <Title to="/">Axur News.</Title>
+      <Title onClick={() => handleTitleClick()}>Axur News.</Title>
     </Container>
   );
 }

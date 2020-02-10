@@ -22,6 +22,10 @@ const container = styled.div`
     line-height: 1.5;
     text-align: justify;
     text-justify: newspaper;
+    & + div {
+      margin-top: 20px;
+      border-top: solid 1px #ddd;
+    }
   }
 `;
 

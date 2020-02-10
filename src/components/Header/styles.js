@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { device } from '../../styles/device';
 
@@ -17,7 +17,7 @@ export const Container = styled.header`
   }
 `;
 
-export const Title = styled(Link)`
+export const Title = styled.h1`
   color: #fff;
   text-decoration: none;
   font: 26px Roboto, sans-serif;
@@ -27,6 +27,7 @@ export const Title = styled(Link)`
   padding-right: 2px;
   font-weight: bold;
   transition: 0.1s;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;

@@ -1,19 +1,13 @@
 const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.js')],
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
     publicPath: '/',
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
-    historyApiFallback: true,
-    open: 'http://localhost:8080/',
-    hot: true,
-    host: '0.0.0.0',
-    compress: true,
   },
   module: {
     rules: [
@@ -29,11 +23,19 @@ module.exports = {
         use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
       },
       {
-        test: /\.*\.(gif|png|jpe?g|svg)$/i,
+        test: /\.*\.(gif|png|jpe?g|svg|ico)$/i,
         use: {
           loader: 'file-loader',
         },
       },
     ],
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Axur News',
+      template: './public/index.html',
+      favicon: './public/favicon.png',
+    }),
+  ],
 };

@@ -61,6 +61,7 @@ export default function Home() {
     }
     return noticesParam.map(notice => (
       <li
+        data-test-id="notice-list"
         key={notice.title}
         onClick={() => openNoticia(notice)}
         role="presentation"
@@ -137,7 +138,7 @@ export default function Home() {
         <div>
           <SearchBar
             placeholder="Filter by author"
-            onChange={handleFilterChange}
+            onChange={e => handleFilterChange(e)}
           />
           <OrderButton type="button" onClick={() => handleOrderByDate()}>
             Order by date
